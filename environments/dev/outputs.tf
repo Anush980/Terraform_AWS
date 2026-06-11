@@ -9,3 +9,13 @@ output "public_subnet_ids" {
   value       = module.networking.public_subnet_ids
   description = "The list of IDs belonging to the public subnets"
 }
+
+output "repository_url"{
+    value = module.ecr.repository_url
+    description= "ecr repository url"
+}
+
+output "github_deploy_role_arn" {
+  value       = module.iam.github_deploy_role_arn
+  description = "OIDC Role ARN for GitHub Actions workflows"
+}

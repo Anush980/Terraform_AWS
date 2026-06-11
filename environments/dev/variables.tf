@@ -26,3 +26,15 @@ variable "public_subnets" {
   description = "list of cidr blocks"
   type        = list(string)
 }
+
+## iam variables
+
+variable "github_username" {
+    description= "Github org or username"
+    type=string
+}
+
+variable "github_repo_name" {
+    description= "Github repo name"
+    type=string
+}
