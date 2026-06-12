@@ -1,0 +1,424 @@
+[0m[1mmodule.iam.data.tls_certificate.github: Reading...[0m[0m
+[0m[1mmodule.iam.data.aws_iam_policy_document.ecs_tasks_assume_role: Reading...[0m[0m
+[0m[1mdata.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.ecs.aws_cloudwatch_log_group.ecs_logs: Refreshing state... [id=/ecs/vyaparflow-dev][0m
+[0m[1mmodule.ecs.aws_ecs_cluster.main: Refreshing state... [id=arn:aws:ecs:ap-south-1:961832993963:cluster/vyaparflow-dev-cluster][0m
+[0m[1mmodule.networking.aws_vpc.main: Refreshing state... [id=vpc-0903a390437a38533][0m
+[0m[1mmodule.iam.data.aws_iam_policy_document.ecs_tasks_assume_role: Read complete after 0s [id=1077804475][0m
+[0m[1mmodule.ecr.aws_ecr_repository.app: Refreshing state... [id=vyaparflow-dev-ecr][0m
+[0m[1mmodule.iam.aws_iam_role.ecs_task_execution_role: Refreshing state... [id=vyaparflow-dev-ecs-execution-role][0m
+[0m[1mmodule.iam.aws_iam_role.ecs_task_role: Refreshing state... [id=vyaparflow-dev-ecs-task-role][0m
+[0m[1mdata.aws_caller_identity.current: Read complete after 0s [id=961832993963][0m
+[0m[1mmodule.ecr.aws_ecr_lifecycle_policy.app_policy: Refreshing state... [id=vyaparflow-dev-ecr][0m
+[0m[1mmodule.iam.data.tls_certificate.github: Read complete after 1s [id=21cc813b647d562789be0cf4f55cd08bc8852f4e][0m
+[0m[1mmodule.iam.aws_iam_openid_connect_provider.github: Refreshing state... [id=arn:aws:iam::961832993963:oidc-provider/token.actions.githubusercontent.com][0m
+[0m[1mmodule.networking.aws_internet_gateway.main: Refreshing state... [id=igw-04087f19149903b72][0m
+[0m[1mmodule.networking.aws_subnet.public[0]: Refreshing state... [id=subnet-0dbfb4d258e60795e][0m
+[0m[1mmodule.networking.aws_subnet.public[1]: Refreshing state... [id=subnet-069e9114c4ebb935d][0m
+[0m[1mmodule.ecs.aws_security_group.ecs_sg: Refreshing state... [id=sg-0cafb8493ee11cfe4][0m
+[0m[1mmodule.networking.aws_route_table.public: Refreshing state... [id=rtb-0a91e5a293c9248ac][0m
+[0m[1mmodule.networking.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-02ec53a0f70ec6e16][0m
+[0m[1mmodule.networking.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-015606f1409f0918a][0m
+[0m[1mmodule.iam.data.aws_iam_policy_document.github_actions_assume_role: Reading...[0m[0m
+[0m[1mmodule.iam.data.aws_iam_policy_document.github_actions_assume_role: Read complete after 0s [id=3176468557][0m
+[0m[1mmodule.iam.aws_iam_role.github_ci_deploy: Refreshing state... [id=vyaparflow-dev-github-deploy-role][0m
+[0m[1mmodule.iam.aws_iam_role_policy_attachment.ecs_task_execution_attachment: Refreshing state... [id=vyaparflow-dev-ecs-execution-role-20260611184024404300000001][0m
+[0m[1mmodule.iam.aws_iam_policy.github_deploy_permissions: Refreshing state... [id=arn:aws:iam::961832993963:policy/vyaparflow-dev-github-deploy-policy][0m
+[0m[1mmodule.ecs.aws_ecs_task_definition.app: Refreshing state... [id=vyaparflow-dev-task][0m
+[0m[1mmodule.ecs.aws_ecs_service.main: Refreshing state... [id=arn:aws:ecs:ap-south-1:961832993963:service/vyaparflow-dev-cluster/vyaparflow-dev-service][0m
+[0m[1mmodule.iam.aws_iam_role_policy_attachment.github_deploy_attachment: Refreshing state... [id=vyaparflow-dev-github-deploy-role-20260611184119687500000001][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+  [33m~[0m update in-place[0m
+[31m-[0m/[32m+[0m destroy and then create replacement[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.database.aws_db_instance.postgres[0m will be created
+[0m  [32m+[0m[0m resource "aws_db_instance" "postgres" {
+      [32m+[0m[0m address                               = (known after apply)
+      [32m+[0m[0m allocated_storage                     = 20
+      [32m+[0m[0m apply_immediately                     = false
+      [32m+[0m[0m arn                                   = (known after apply)
+      [32m+[0m[0m auto_minor_version_upgrade            = true
+      [32m+[0m[0m availability_zone                     = (known after apply)
+      [32m+[0m[0m backup_retention_period               = (known after apply)
+      [32m+[0m[0m backup_target                         = (known after apply)
+      [32m+[0m[0m backup_window                         = (known after apply)
+      [32m+[0m[0m ca_cert_identifier                    = (known after apply)
+      [32m+[0m[0m character_set_name                    = (known after apply)
+      [32m+[0m[0m copy_tags_to_snapshot                 = false
+      [32m+[0m[0m database_insights_mode                = (known after apply)
+      [32m+[0m[0m db_name                               = "vyaparflow_db"
+      [32m+[0m[0m db_subnet_group_name                  = "vyaparflow-dev-db-subnet-group"
+      [32m+[0m[0m dedicated_log_volume                  = false
+      [32m+[0m[0m delete_automated_backups              = true
+      [32m+[0m[0m domain_fqdn                           = (known after apply)
+      [32m+[0m[0m endpoint                              = (known after apply)
+      [32m+[0m[0m engine                                = "postgres"
+      [32m+[0m[0m engine_lifecycle_support              = (known after apply)
+      [32m+[0m[0m engine_version                        = "15"
+      [32m+[0m[0m engine_version_actual                 = (known after apply)
+      [32m+[0m[0m hosted_zone_id                        = (known after apply)
+      [32m+[0m[0m id                                    = (known after apply)
+      [32m+[0m[0m identifier                            = "vyaparflow-dev-db"
+      [32m+[0m[0m identifier_prefix                     = (known after apply)
+      [32m+[0m[0m instance_class                        = "db.t4g.micro"
+      [32m+[0m[0m iops                                  = (known after apply)
+      [32m+[0m[0m kms_key_id                            = (known after apply)
+      [32m+[0m[0m latest_restorable_time                = (known after apply)
+      [32m+[0m[0m license_model                         = (known after apply)
+      [32m+[0m[0m listener_endpoint                     = (known after apply)
+      [32m+[0m[0m maintenance_window                    = (known after apply)
+      [32m+[0m[0m master_user_secret                    = (known after apply)
+      [32m+[0m[0m master_user_secret_kms_key_id         = (known after apply)
+      [32m+[0m[0m max_allocated_storage                 = 100
+      [32m+[0m[0m monitoring_interval                   = 0
+      [32m+[0m[0m monitoring_role_arn                   = (known after apply)
+      [32m+[0m[0m multi_az                              = (known after apply)
+      [32m+[0m[0m nchar_character_set_name              = (known after apply)
+      [32m+[0m[0m network_type                          = (known after apply)
+      [32m+[0m[0m option_group_name                     = (known after apply)
+      [32m+[0m[0m parameter_group_name                  = (known after apply)
+      [32m+[0m[0m password                              = (sensitive value)
+      [32m+[0m[0m password_wo                           = (write-only attribute)
+      [32m+[0m[0m performance_insights_enabled          = false
+      [32m+[0m[0m performance_insights_kms_key_id       = (known after apply)
+      [32m+[0m[0m performance_insights_retention_period = (known after apply)
+      [32m+[0m[0m port                                  = (known after apply)
+      [32m+[0m[0m publicly_accessible                   = false
+      [32m+[0m[0m replica_mode                          = (known after apply)
+      [32m+[0m[0m replicas                              = (known after apply)
+      [32m+[0m[0m resource_id                           = (known after apply)
+      [32m+[0m[0m skip_final_snapshot                   = true
+      [32m+[0m[0m snapshot_identifier                   = (known after apply)
+      [32m+[0m[0m status                                = (known after apply)
+      [32m+[0m[0m storage_throughput                    = (known after apply)
+      [32m+[0m[0m storage_type                          = (known after apply)
+      [32m+[0m[0m tags                                  = {
+          [32m+[0m[0m "Name" = "vyaparflow-dev-database"
+        }
+      [32m+[0m[0m tags_all                              = {
+          [32m+[0m[0m "Enviroment" = "dev"
+          [32m+[0m[0m "ManagedBy"  = "Terraform"
+          [32m+[0m[0m "Name"       = "vyaparflow-dev-database"
+          [32m+[0m[0m "Project"    = "vyaparflow"
+        }
+      [32m+[0m[0m timezone                              = (known after apply)
+      [32m+[0m[0m username                              = "postgres"
+      [32m+[0m[0m vpc_security_group_ids                = (known after apply)
+    }
+
+[1m  # module.database.aws_db_subnet_group.main[0m will be created
+[0m  [32m+[0m[0m resource "aws_db_subnet_group" "main" {
+      [32m+[0m[0m arn                     = (known after apply)
+      [32m+[0m[0m description             = "Managed by Terraform"
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m name                    = "vyaparflow-dev-db-subnet-group"
+      [32m+[0m[0m name_prefix             = (known after apply)
+      [32m+[0m[0m subnet_ids              = [
+          [32m+[0m[0m "subnet-069e9114c4ebb935d",
+          [32m+[0m[0m "subnet-0dbfb4d258e60795e",
+        ]
+      [32m+[0m[0m supported_network_types = (known after apply)
+      [32m+[0m[0m tags                    = {
+          [32m+[0m[0m "Name" = "vyaparflow-dev-db-subnet-group"
+        }
+      [32m+[0m[0m tags_all                = {
+          [32m+[0m[0m "Enviroment" = "dev"
+          [32m+[0m[0m "ManagedBy"  = "Terraform"
+          [32m+[0m[0m "Name"       = "vyaparflow-dev-db-subnet-group"
+          [32m+[0m[0m "Project"    = "vyaparflow"
+        }
+      [32m+[0m[0m vpc_id                  = (known after apply)
+    }
+
+[1m  # module.database.aws_security_group.db_sg[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "db_sg" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Strict inbound isolation vault for the vyaparflow database"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = []
+              [32m+[0m[0m from_port        = 5432
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = [
+                  [32m+[0m[0m "sg-0cafb8493ee11cfe4",
+                ]
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 5432
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m name                   = "vyaparflow-dev-db-sg"
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Name" = "vyaparflow-dev-db-sg"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Enviroment" = "dev"
+          [32m+[0m[0m "ManagedBy"  = "Terraform"
+          [32m+[0m[0m "Name"       = "vyaparflow-dev-db-sg"
+          [32m+[0m[0m "Project"    = "vyaparflow"
+        }
+      [32m+[0m[0m vpc_id                 = "vpc-0903a390437a38533"
+    }
+
+[1m  # module.ecs.aws_ecs_cluster.main[0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_ecs_cluster" "main" {
+        id       = "arn:aws:ecs:ap-south-1:961832993963:cluster/vyaparflow-dev-cluster"
+        name     = "vyaparflow-dev-cluster"
+      [33m~[0m[0m tags     = {
+          [31m-[0m[0m "AWS.SSM.AppManager.ECS.Cluster.ARN" = "arn:aws:ecs:ap-south-1:961832993963:cluster/vyaparflow-dev-cluster" [90m-> null[0m[0m
+            "Name"                               = "vyaparflow-dev-cluster"
+        }
+      [33m~[0m[0m tags_all = {
+          [31m-[0m[0m "AWS.SSM.AppManager.ECS.Cluster.ARN" = "arn:aws:ecs:ap-south-1:961832993963:cluster/vyaparflow-dev-cluster" [90m-> null[0m[0m
+            [90m# (4 unchanged elements hidden)[0m[0m
+        }
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # module.ecs.aws_ecs_service.main[0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_ecs_service" "main" {
+        id                                 = "arn:aws:ecs:ap-south-1:961832993963:service/vyaparflow-dev-cluster/vyaparflow-dev-service"
+        name                               = "vyaparflow-dev-service"
+        tags                               = {}
+      [33m~[0m[0m task_definition                    = "arn:aws:ecs:ap-south-1:961832993963:task-definition/vyaparflow-dev-task:9" -> (known after apply)
+        [90m# (16 unchanged attributes hidden)[0m[0m
+
+        [90m# (3 unchanged blocks hidden)[0m[0m
+    }
+
+[1m  # module.ecs.aws_ecs_task_definition.app[0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_ecs_task_definition" "app" {
+      [33m~[0m[0m arn                      = "arn:aws:ecs:ap-south-1:961832993963:task-definition/vyaparflow-dev-task:9" -> (known after apply)
+      [33m~[0m[0m arn_without_revision     = "arn:aws:ecs:ap-south-1:961832993963:task-definition/vyaparflow-dev-task" -> (known after apply)
+      [33m~[0m[0m container_definitions    = jsonencode(
+            [
+              [31m-[0m[0m {
+                  [31m-[0m[0m environment      = []
+                  [31m-[0m[0m essential        = true
+                  [31m-[0m[0m image            = "nginx:alpine"
+                  [31m-[0m[0m logConfiguration = {
+                      [31m-[0m[0m logDriver = "awslogs"
+                      [31m-[0m[0m options   = {
+                          [31m-[0m[0m awslogs-group         = "/ecs/vyaparflow-dev"
+                          [31m-[0m[0m awslogs-region        = "ap-south-1"
+                          [31m-[0m[0m awslogs-stream-prefix = "nginx"
+                        }
+                    }
+                  [31m-[0m[0m mountPoints      = []
+                  [31m-[0m[0m name             = "vyaparflow-dev-nginx"
+                  [31m-[0m[0m portMappings     = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m containerPort = 80
+                          [31m-[0m[0m hostPort      = 80
+                          [31m-[0m[0m protocol      = "tcp"
+                        },
+                    ]
+                  [31m-[0m[0m systemControls   = []
+                  [31m-[0m[0m volumesFrom      = []
+                },
+              [31m-[0m[0m {
+                  [31m-[0m[0m environment      = []
+                  [31m-[0m[0m essential        = true
+                  [31m-[0m[0m healthCheck      = {
+                      [31m-[0m[0m command     = [
+                          [31m-[0m[0m "CMD-SHELL",
+                          [31m-[0m[0m "curl -f http://localhost:8080/actuator/health || exit 1",
+                        ]
+                      [31m-[0m[0m interval    = 30
+                      [31m-[0m[0m retries     = 3
+                      [31m-[0m[0m startPeriod = 60
+                      [31m-[0m[0m timeout     = 5
+                    }
+                  [31m-[0m[0m image            = "crccheck/hello-world"
+                  [31m-[0m[0m logConfiguration = {
+                      [31m-[0m[0m logDriver = "awslogs"
+                      [31m-[0m[0m options   = {
+                          [31m-[0m[0m awslogs-group         = "/ecs/vyaparflow-dev"
+                          [31m-[0m[0m awslogs-region        = "ap-south-1"
+                          [31m-[0m[0m awslogs-stream-prefix = "springboot"
+                        }
+                    }
+                  [31m-[0m[0m mountPoints      = []
+                  [31m-[0m[0m name             = "vyaparflow-dev-springboot"
+                  [31m-[0m[0m portMappings     = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m containerPort = 8080
+                          [31m-[0m[0m hostPort      = 8080
+                          [31m-[0m[0m protocol      = "tcp"
+                        },
+                    ]
+                  [31m-[0m[0m systemControls   = []
+                  [31m-[0m[0m volumesFrom      = []
+                },
+            ]
+        ) -> (known after apply) [31m# forces replacement[0m[0m
+      [33m~[0m[0m enable_fault_injection   = false -> (known after apply)
+      [33m~[0m[0m id                       = "vyaparflow-dev-task" -> (known after apply)
+      [33m~[0m[0m revision                 = 9 -> (known after apply)
+      [31m-[0m[0m tags                     = {} [90m-> null[0m[0m
+        [90m# (12 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.security.aws_ssm_parameter.db_password_ssm[0m will be created
+[0m  [32m+[0m[0m resource "aws_ssm_parameter" "db_password_ssm" {
+      [32m+[0m[0m arn            = (known after apply)
+      [32m+[0m[0m data_type      = (known after apply)
+      [32m+[0m[0m description    = "Auto-generated master database password for vyaparflow"
+      [32m+[0m[0m has_value_wo   = (known after apply)
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m insecure_value = (known after apply)
+      [32m+[0m[0m key_id         = (known after apply)
+      [32m+[0m[0m name           = "/vyaparflow/dev/database/password"
+      [32m+[0m[0m tags_all       = {
+          [32m+[0m[0m "Enviroment" = "dev"
+          [32m+[0m[0m "ManagedBy"  = "Terraform"
+          [32m+[0m[0m "Project"    = "vyaparflow"
+        }
+      [32m+[0m[0m tier           = (known after apply)
+      [32m+[0m[0m type           = "SecureString"
+      [32m+[0m[0m value          = (sensitive value)
+      [32m+[0m[0m value_wo       = (write-only attribute)
+      [32m+[0m[0m version        = (known after apply)
+    }
+
+[1m  # module.security.aws_ssm_parameter.jwt_access_ssm[0m will be created
+[0m  [32m+[0m[0m resource "aws_ssm_parameter" "jwt_access_ssm" {
+      [32m+[0m[0m arn            = (known after apply)
+      [32m+[0m[0m data_type      = (known after apply)
+      [32m+[0m[0m description    = "Master Access Token signing key for vyaparflow"
+      [32m+[0m[0m has_value_wo   = (known after apply)
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m insecure_value = (known after apply)
+      [32m+[0m[0m key_id         = (known after apply)
+      [32m+[0m[0m name           = "/vyaparflow/dev/jwt/access_secret"
+      [32m+[0m[0m tags_all       = {
+          [32m+[0m[0m "Enviroment" = "dev"
+          [32m+[0m[0m "ManagedBy"  = "Terraform"
+          [32m+[0m[0m "Project"    = "vyaparflow"
+        }
+      [32m+[0m[0m tier           = (known after apply)
+      [32m+[0m[0m type           = "SecureString"
+      [32m+[0m[0m value          = (sensitive value)
+      [32m+[0m[0m value_wo       = (write-only attribute)
+      [32m+[0m[0m version        = (known after apply)
+    }
+
+[1m  # module.security.aws_ssm_parameter.jwt_refresh_ssm[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_ssm_parameter" "jwt_refresh_ssm" {
+      [32m+[0m[0m arn            = (known after apply)
+      [32m+[0m[0m data_type      = (known after apply)
+      [32m+[0m[0m description    = "Long-lived Refresh Token signing key for vyaparflow"
+      [32m+[0m[0m has_value_wo   = (known after apply)
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m insecure_value = (known after apply)
+      [32m+[0m[0m key_id         = (known after apply)
+      [32m+[0m[0m name           = "/vyaparflow/dev/jwt/refresh_secret"
+      [32m+[0m[0m tags_all       = {
+          [32m+[0m[0m "Enviroment" = "dev"
+          [32m+[0m[0m "ManagedBy"  = "Terraform"
+          [32m+[0m[0m "Project"    = "vyaparflow"
+        }
+      [32m+[0m[0m tier           = (known after apply)
+      [32m+[0m[0m type           = "SecureString"
+      [32m+[0m[0m value          = (sensitive value)
+      [32m+[0m[0m value_wo       = (write-only attribute)
+      [32m+[0m[0m version        = (known after apply)
+    }
+
+[1m  # module.security.random_id.jwt_access_secret[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "jwt_access_secret" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 32
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1m  # module.security.random_id.jwt_refresh_secret[0][0m will be created
+[0m  [32m+[0m[0m resource "random_id" "jwt_refresh_secret" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 32
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1m  # module.security.random_password.db_pass[0m will be created
+[0m  [32m+[0m[0m resource "random_password" "db_pass" {
+      [32m+[0m[0m bcrypt_hash      = (sensitive value)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m length           = 24
+      [32m+[0m[0m lower            = true
+      [32m+[0m[0m min_lower        = 0
+      [32m+[0m[0m min_numeric      = 0
+      [32m+[0m[0m min_special      = 0
+      [32m+[0m[0m min_upper        = 0
+      [32m+[0m[0m number           = true
+      [32m+[0m[0m numeric          = true
+      [32m+[0m[0m override_special = "!#$%&*()-_=+[]{}<>:?"
+      [32m+[0m[0m result           = (sensitive value)
+      [32m+[0m[0m special          = true
+      [32m+[0m[0m upper            = true
+    }
+
+[1mPlan:[0m [0m10 to add, 2 to change, 1 to destroy.
+
+Changes to Outputs:
+  [32m+[0m[0m database_connection_endpoint       = (known after apply)
+  [31m-[0m[0m dev_ecs_cluster_name               = "vyaparflow-dev-cluster" [90m-> null[0m[0m
+  [31m-[0m[0m dev_ecs_security_group_id          = "sg-0cafb8493ee11cfe4" [90m-> null[0m[0m
+  [31m-[0m[0m dev_ecs_service_name               = "vyaparflow-dev-service" [90m-> null[0m[0m
+  [32m+[0m[0m ecr_repository_url                 = "961832993963.dkr.ecr.ap-south-1.amazonaws.com/vyaparflow-dev-ecr"
+  [32m+[0m[0m ecs_cluster_name                   = "vyaparflow-dev-cluster"
+  [32m+[0m[0m ecs_service_name                   = "vyaparflow-dev-service"
+  [31m-[0m[0m github_deploy_role_arn             = "arn:aws:iam::961832993963:role/vyaparflow-dev-github-deploy-role" [90m-> null[0m[0m
+  [32m+[0m[0m provisioned_dynamic_secrets_matrix = {}
+  [31m-[0m[0m public_subnet_ids                  = [
+      [31m-[0m[0m "subnet-0dbfb4d258e60795e",
+      [31m-[0m[0m "subnet-069e9114c4ebb935d",
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m repository_url                     = "961832993963.dkr.ecr.ap-south-1.amazonaws.com/vyaparflow-dev-ecr" [90m-> null[0m[0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mValue for undeclared variable[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe root module does not declare a variable named "container_port" but a value was found in file "terraform.tfvars". If you meant to use this value, add a
+[33m│[0m [0m"variable" block to the configuration.
+[33m│[0m [0m
+[33m│[0m [0mTo silence these warnings, use TF_VAR_... environment variables to provide certain "global" settings to all configurations in your organization. To reduce
+[33m│[0m [0mthe verbosity of these warnings, use the -compact-warnings option.
+[33m╵[0m[0m
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

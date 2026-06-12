@@ -1,37 +1,41 @@
+# ==============================================================================
+# 1. NETWORKING EXPORTS
+# ==============================================================================
 output "vpc_id" {
-  # Change from aws_vpc.main.id to module.networking.vpc_id
   value       = module.networking.vpc_id
-  description = "The ID of the main VPC"
+  description = "The unique tracking ID assigned to your custom VPC network infrastructure"
 }
 
-output "public_subnet_ids" {
-  # Change from aws_subnet.public[*].id to module.networking.public_subnet_ids
-  value       = module.networking.public_subnet_ids
-  description = "The list of IDs belonging to the public subnets"
-}
-
-output "repository_url"{
-    value = module.ecr.repository_url
-    description= "ecr repository url"
-}
-
-output "github_deploy_role_arn" {
-  value       = module.iam.github_deploy_role_arn
-  description = "OIDC Role ARN for GitHub Actions workflows"
-}
-
-output "dev_ecs_cluster_name" {
+# ==============================================================================
+# 2. COMPUTATION SERVICE EXPORTS
+# ==============================================================================
+output "ecs_cluster_name" {
   value       = module.ecs.cluster_name
-  description = "Active Dev Compute Cluster Name"
+  description = "The tracking name assigned to your logical ECS Fargate coordination cluster"
 }
 
-output "dev_ecs_service_name" {
+output "ecs_service_name" {
   value       = module.ecs.service_name
-  description = "Active Dev ECS Service Name"
+  description = "The management identifier tracking the active long-running app process daemon"
 }
 
-# This lets you quickly double check which firewall is protecting your app
-output "dev_ecs_security_group_id" {
-  value       = module.ecs.security_group_id
-  description = "Dedicated Application Security Group ID"
+# ==============================================================================
+# 3. COMPONENT DATA REPOSITORIES (ECR & RDS)
+# ==============================================================================
+output "ecr_repository_url" {
+  value       = module.ecr.repository_url
+  description = "The endpoint registry path targeting your spring boot build image dropzone"
+}
+
+output "database_connection_endpoint" {
+  value       = module.database.db_endpoint
+  description = "The raw connection string endpoint targeting your locked down PostgreSQL cluster host"
+}
+
+# ==============================================================================
+# 4. ACTIVE VAULT PARAMETER MAP LOOKUPS
+# ==============================================================================
+output "provisioned_dynamic_secrets_matrix" {
+  value       = module.security.dynamic_secret_arns
+  description = "The active map layout collecting all provisioned third party SSM location keys"
 }
