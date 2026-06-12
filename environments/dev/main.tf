@@ -25,6 +25,7 @@ module "iam" {
 module "ecs" {
   source             = "../../modules/ecs"
   project_name       = var.project_name
+  aws_region = var.aws_region
   environment        = var.environment
   vpc_id             = module.networking.vpc_id 
   public_subnet_ids  = module.networking.public_subnet_ids
