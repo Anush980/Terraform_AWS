@@ -38,3 +38,10 @@ variable "github_repo_name" {
     description= "Github repo name"
     type=string
 }
+
+variable "cpu_size" {
+    type = string
+}
+variable  "memory_size" {
+    type= string
+}

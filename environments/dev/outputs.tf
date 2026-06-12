@@ -19,3 +19,19 @@ output "github_deploy_role_arn" {
   value       = module.iam.github_deploy_role_arn
   description = "OIDC Role ARN for GitHub Actions workflows"
 }
+
+output "dev_ecs_cluster_name" {
+  value       = module.ecs.cluster_name
+  description = "Active Dev Compute Cluster Name"
+}
+
+output "dev_ecs_service_name" {
+  value       = module.ecs.service_name
+  description = "Active Dev ECS Service Name"
+}
+
+# This lets you quickly double check which firewall is protecting your app
+output "dev_ecs_security_group_id" {
+  value       = module.ecs.security_group_id
+  description = "Dedicated Application Security Group ID"
+}
